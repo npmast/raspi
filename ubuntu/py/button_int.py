@@ -47,7 +47,6 @@ finally:
     button.release()
     chip.close()
       
-
 #line.request(): GPIO 라인을 커널에 사용 요청하는 함수
 #consumer = "button": GPIO를 사용하는 메타 데이터(라벨) gpioinfo gpiochip4 로 확인
 #type = gpiod.LINE__REQ_EV_BOTH_EDGES: 이 라인을 "입력 + 이벤트 감지 모드"로 설정
