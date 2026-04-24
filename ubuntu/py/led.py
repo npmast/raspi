@@ -1,13 +1,14 @@
 import gpiod
 import time
 
-CHIP = "gpiochip4"   # Pi5 핵심
-LINE = 14            # GPIO14
+CHIP = "/dev/gpiochip4"   # Pi5 핵심
+LED_GPIO = 14            # GPIO14
 
 chip = gpiod.Chip(CHIP)
-line = chip.get_line(LINE)
+led = chip.get_line(LED_GPIO)
 
-line.request(consumer="led", type=gpiod.LINE_REQ_DIR_OUT)
+led.request(consumer="led", 
+            type=gpiod.LINE_REQ_DIR_OUT)
 
 try:
     while True:
@@ -21,6 +22,8 @@ try:
 
 except KeyboardInterrupt:
     print("종료")
-
 finally:
     line.release()
+
+# consumer: 식별 이름
+# DIR_OUT: 출력 모드  
