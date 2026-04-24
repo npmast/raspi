@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define CHIP_NAME "/dev/gpiochip0"
+#define CHIP_NAME "/dev/gpiochip4"
 #define LED_GPIO 17
 
 int main(void)
