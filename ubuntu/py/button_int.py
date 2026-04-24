@@ -1,8 +1,8 @@
 import gpiod
 import time
 
-LED_GPIO = 17
-BUTTON_GPIO = 27
+LED_GPIO = 14
+BUTTON_GPIO = 15
 
 chip = gpiod.Chip("/dev/gpiochip4")
 
