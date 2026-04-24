@@ -4,7 +4,7 @@
 
 #define CHIP_NAME   "/dev/gpiochip4"
 #define LED_GPIO    14
-#define BUTTON_GPIO 27
+#define BUTTON_GPIO 15
 
 int main(void)
 {
@@ -42,7 +42,7 @@ int main(void)
         gpiod_chip_close(chip);
         return 1;
     }
-
+    // 입력 인터럽트 설정 - 눌림 이벤트 발생
     ret = gpiod_line_request_falling_edge_events_flags(
         button_line,
         "button",
@@ -59,7 +59,7 @@ int main(void)
     printf("버튼 입력 대기 중... Ctrl+C 종료\n");
 
     while (1) {
-        ret = gpiod_line_event_wait(button_line, NULL);
+        ret = gpiod_line_event_wait(button_line, NULL);        // 커널 이벤트 대기
 
         if (ret < 0) {
             perror("gpiod_line_event_wait");
@@ -70,7 +70,7 @@ int main(void)
             continue;
         }
 
-        ret = gpiod_line_event_read(button_line, &event);
+        ret = gpiod_line_event_read(button_line, &event);        // 이벤트 읽기
         if (ret < 0) {
             perror("gpiod_line_event_read");
             break;
