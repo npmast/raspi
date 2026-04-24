@@ -2,7 +2,7 @@ import gpiod
 import time
 
 CHIP = "gpiochip4"   # Pi5 핵심
-LINE = 17            # GPIO17
+LINE = 14            # GPIO14
 
 chip = gpiod.Chip(CHIP)
 line = chip.get_line(LINE)
