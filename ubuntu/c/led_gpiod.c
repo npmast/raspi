@@ -7,10 +7,10 @@
 
 int main(void)
 {
-    struct gpiod_chip *chip;
-    struct gpiod_line *line;
+    struct gpiod_chip *chip;            // 컨트롤러
+    struct gpiod_line *line;            // 컨트롤러의 핀
     int ret;
-
+    // chip: gpiochip4 의 file descriptor 
     chip = gpiod_chip_open(CHIP_NAME);
     if (!chip) {
         perror("gpiod_chip_open");
@@ -46,3 +46,17 @@ int main(void)
 
     return 0;
 }
+/*
+    strcut gpiod_chip {
+        int fd;
+        char name[32];
+        unsigned int num_line;
+    };
+    사용 code: chip = gpiod_chip_open("/dev/gpiochip4"); 
+    
+    struct gpiod_line {        // GPIO 개별 핀
+        struct gpiod_chip* chip;
+        unsigned int offset;
+    };
+    사용 code: line = gpiod_chip_get_line(chip, 14);
+*/
