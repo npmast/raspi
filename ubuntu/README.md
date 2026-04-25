@@ -28,9 +28,10 @@ ros2/00_setup_docs/pi_ubuntu.md
 ```c
 $ sudo apt install terminator -y
 ```
-* jupyter lab 설치  
- 
-
+* jupyter lab 설치
+  ```c
+ros2/00_setup_docs/pi_ubuntu.md
+```
 #### 2. libgpiod 설치  
 * C/C++
 ```c
