@@ -7,12 +7,11 @@ $ sudo apt install openssh-server -y
 $ sudo apt update
 $ sudo apt upgrade -y
 ```
+* vncserver 설치
 * terminator 설치  
 ```c
 $ sudo apt install terminator -y
 ```
-* vncserver 설치
-
 * jupyter lab 설치  
  
 
