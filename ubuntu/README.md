@@ -1,27 +1,28 @@
 ### ubuntu 시작하기
 #### 1. setting  
 * wifi 설정
- ```c
+* openssh-server 설치  
+``` c
+$ sudo apt install openssh-server -y
+$ sudo apt update
+$ sudo apt upgrade -y
+```
+* 고정 IP 설정
+```c
 $ nmcli con show
 nmcli con mod "WiFi_id" \
-ipv4.addresses xxx.xxx.xxx.xxx/24 \
-ipv4.gateway xxx.xxx.xxx.xxx \
-ipv4.dns "xxx.xxx.xxx.xxx" \
+ipv4.addresses 172.30.1.10/24 \
+ipv4.gateway 172.30.1.254 \
+ipv4.dns "168.126.63.1" \
 ipv4.method manual
 $ nmcli con down "WiFi_id"
 $ nmcli con up "WiFi_id"
 $ sudo reboot                         // ssh 경우
 $ ip a
 ```
-* openssh-server 설치  
-```c
-$ sudo apt install openssh-server -y
-$ sudo apt update
-$ sudo apt upgrade -y
-```
 * vncserver 설치
  ```c
-
+ros2
 ```
 * terminator 설치  
 ```c
