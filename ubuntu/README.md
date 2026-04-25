@@ -22,7 +22,7 @@ $ ip a
 ```
 * vncserver 설치
  ```c
-ros2
+ros2/00_setup_docs/pi_ubuntu.md
 ```
 * terminator 설치  
 ```c
