@@ -1,7 +1,7 @@
 # raspberryPi 5 
 www.raspberrypi.com > software > Raspberry Pi Imager Download for Windows  
 원하는 OS 를 설치할 수 있다.
-### 대표 운영체제  
+### 운영체제  
 #### 1. 라즈비안: Raspberry Pi 를 위한 최적화 OS  
 Debian  
 GPIO: RPi.GPIO  
