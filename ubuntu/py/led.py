@@ -1,8 +1,8 @@
 import gpiod
 import time
 
-CHIP = "/dev/gpiochip4"   # Pi5 핵심
-LED_GPIO = 14            # GPIO14
+CHIP = "/dev/gpiochip4"    # Pi5 핵심(사용할 chip)
+LED_GPIO = 14              # GPIO14(사용할 GPIO) 
 
 chip = gpiod.Chip(CHIP)
 led = chip.get_line(LED_GPIO)
