@@ -8,6 +8,9 @@ $ sudo apt update
 $ sudo apt upgrade -y
 ```
 * vncserver 설치
+ ```c
+
+```
 * terminator 설치  
 ```c
 $ sudo apt install terminator -y
