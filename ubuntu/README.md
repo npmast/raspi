@@ -14,11 +14,18 @@ $ sudo apt install terminator -y
 * jupyter lab 설치  
 * vncserver 설치  
 
-#### 2. libgpiod 설치
+#### 2. libgpiod 설치  
+* C++
 ```c
 $ sudo apt install libgpiod_dev -y
 # include <gpiod.h>
 gcc compile 시 -lgpiod 옵션 추가
+```
+* Python
+  가상환경 사용
+```py
+$ sudo apt install python3-dev -y
+$ pip install gpiod
 ```
 #### 3. 매핑  
 ```c
