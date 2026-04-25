@@ -12,31 +12,28 @@ $ sudo apt upgrade -y
 $ sudo apt install terminator -y
 ```
 * vncserver 설치
-* 가상환경 설치
-```c
-$ sudo apt install python3.12-venv
-$ mkdir -p ~/venvs
-$ cd ~/venvs
-$ python3 -m venv .venv
-$ soucre .venv/bin/activate
-$ deactivate
- ```
+
 * jupyter lab 설치  
  
 
 #### 2. libgpiod 설치  
-* C
+* C/C++
 ```c
-$ sudo apt install libgpiod-dev gpiod -y
+$ sudo apt install libgpiod-dev gpiod -y  
 # include <gpiod.h>
 gcc compile 시 -lgpiod 옵션 추가
 ```
 * Python
-  가상환경 사용
 ```py
-$ sudo apt install python3-dev -y
-$ pip install gpiod
+$ sudo apt install python3-libgpiod -y
+$ sudo apt install python3.12-venv
+$ mkdir -p ~/venvs
+$ cd ~/venvs
+$ python3 -m venv --system-site-packages .venv
+$ soucre .venv/bin/activate
+$ deactivate
 ```
+* 두 언어를 모두 사용할 때는 패키지 둘 다 설치를 한다.
 #### 3. 매핑  
 ```c
 chip = gpiod_chip_open("/dev/gpiochip4");      // 먼저 gpiochip4 의 fd를 구하고
