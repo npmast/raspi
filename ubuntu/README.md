@@ -14,18 +14,18 @@ $ sudo apt install terminator -y
 * jupyter lab 설치  
 * vncserver 설치  
 
-#### 1. libgpiod 설치
+#### 2. libgpiod 설치
 ```c
 $ sudo apt install libgpiod_dev -y
 # include <gpiod.h>
 gcc compile 시 -lgpiod 옵션 추가
 ```
-#### 2. 매핑  
+#### 3. 매핑  
 ```c
 chip = gpiod_chip_open("/dev/gpiochip4");      // 먼저 gpiochip4 의 fd를 구하고
 line = gpiod_chip_get_line(chip, 14);          // 구한 fd 의 핀을 사용한다.
 ```
-#### 3. API 연결  
+#### 4. API 연결  
 gpiod_chip_open:               GPIO 장치 열기  
 gpiod_chip_get_line:           핀 가져오기  
 gpiod_line_request_output:     출력 모드 설정  
