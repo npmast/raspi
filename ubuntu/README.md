@@ -1,4 +1,17 @@
-### gpiod 시작하기  
+### ubuntu 시작하기
+#### 1. setting  
+* wifi 설정  
+openssh-server 설치  
+```c
+$ sudo apt install openssh-server -y
+```
+* terminator 설치  
+```c
+$ sudo apt install terminator -y
+```
+* jupyter lab 설치  
+* vncserver 설치  
+
 #### 1. libgpiod 설치
 ```c
 $ sudo apt install libgpiod_dev -y
