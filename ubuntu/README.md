@@ -28,10 +28,6 @@ ros2/00_setup_docs/pi_ubuntu.md
 ```c
 $ sudo apt install terminator -y
 ```
-* jupyter lab 설치
-```c
-ros2/00_setup_docs/pi_ubuntu.md
- ```
 #### 2. GPIO
 * C/C++
 ```c
@@ -50,6 +46,10 @@ $ soucre .venv/bin/activate
 $ deactivate
 ```
 * 두 언어를 모두 사용할 때는 패키지 둘 다 설치를 한다.
+* jupyter lab 설치
+```c
+ros2/00_setup_docs/pi_ubuntu.md
+ ```
 #### 3. 매핑  
 ```c
 chip = gpiod_chip_open("/dev/gpiochip4");      // 먼저 gpiochip4 의 fd를 구하고
