@@ -36,3 +36,21 @@ chip (/dev/gpiochipN)
   > 4. request 생성 (라인 점유)
   > 5. 값 set (ON/OFF)
   > 6. release
+#### 4. easy_led.c  
+```c
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(void)
+{
+    while (1) {
+        system("pinctrl set 14 dh");
+        sleep(1);
+
+        system("pinctrl set 14 dl");
+        sleep(1);
+    }
+
+    return 0;
+}
+```
