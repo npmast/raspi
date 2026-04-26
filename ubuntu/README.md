@@ -15,10 +15,8 @@ ipv4.addresses 172.30.1.10/24 \
 ipv4.gateway 172.30.1.254 \
 ipv4.dns "168.126.63.1" \
 ipv4.method manual
-$ nmcli con down "WiFi_id"
-$ nmcli con up "WiFi_id"
-$ sudo reboot                         // ssh 경우
-$ ip a
+$ nmcli con down "WiFi_id" && nmcli con up "WiFi_id"
+$ ip a / ip addr show wlan0
 ```
 * vncserver 설치
  ```c
