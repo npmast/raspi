@@ -1,4 +1,4 @@
-### gpiozero
+### gpiozero: 260427
 - 가장 쉽다.
 ```c
 $ sudo apt update
