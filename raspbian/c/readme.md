@@ -37,6 +37,7 @@ chip (/dev/gpiochipN)
   > 5. 값 set (ON/OFF)
   > 6. release
 #### 4. easy_led.c  
+pintctl 방식  
 ```c
 #include <stdlib.h>
 #include <unistd.h>
