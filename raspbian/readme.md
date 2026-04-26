@@ -10,7 +10,13 @@ IPv4 Setting > Mehtod: Manual / Address: ADD / Netmask / Gateway / DNS servers
 $ sudo apt update
 $ sudo aup upgrade
 ```
-#### 3. 한글 설치  
+#### 3. VNC
+```c
+$ sudo raspi-config
+3. Interface Option
+I3 VNC
+```
+#### 4. 한글 설치  
 ```c
 $ sudo apt install fonts-nanum fonts-nanum-extra     // 폰트 설치
 $ sudo apt install fonts-unfonts-core                // 폰트 등록
