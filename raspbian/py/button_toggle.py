@@ -11,7 +11,7 @@ def toggle_led():
 button.when_pressed = toggle_led
 
 try:
-    pause()
+    pause()                // 종료 시그널까지 기다림
 except KeyboardInterrupt:
     led.off()
     led.close()
