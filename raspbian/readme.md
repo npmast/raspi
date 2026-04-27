@@ -36,7 +36,7 @@ gcc compile 시 -lgpiod 옵션 추가
 ```
 * Python
 ```c
-$ sudo apt install python3-libgpiod -y
+//$ sudo apt install python3-libgpiod -y
 $ sudo apt install python3.12-venv
 $ mkdir -p ~/venvs
 $ cd ~/venvs
