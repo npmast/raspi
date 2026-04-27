@@ -15,4 +15,9 @@ def button_released():
 button.when_pressed = button_pressed
 button.when_released = button_released
 
-pause()
+try:
+    pause()
+except KeyboardInterrupt():
+    led.off()
+    led.close()
+    print("\n exit")
