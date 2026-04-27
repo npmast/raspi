@@ -10,4 +10,8 @@ def toggle_led():
 
 button.when_pressed = toggle_led
 
-pause()
+try:
+    pause()
+except KeyboardInterrupt:
+    led.off()
+    led.close()
