@@ -17,7 +17,7 @@ button.when_released = button_released
 
 try:
     pause()
-except KeyboardInterrupt():
+finally:
     led.off()
     led.close()
     print("\n exit")
