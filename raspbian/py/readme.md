@@ -1,5 +1,5 @@
 ### gpiozero
-260427
+260427: https://gpiozero.readthedocs.io/en/stable/installing.html
 - 가장 쉽다.
 ```c
 $ sudo apt update
