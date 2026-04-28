@@ -12,4 +12,8 @@ button = Button(2)
 button.when_pressed = say_hello
 button.when_released = say_goodbye
 
-pause()
+try:
+    pause()                // 종료 시그널까지 기다림
+except KeyboardInterrupt:
+    led.off()
+    led.close()
