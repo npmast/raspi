@@ -1,8 +1,8 @@
 from gpiozero import LED, Button
 from signal import pause
 
-led = LED(14)
-button = Button(17)
+led = LED(17)
+button = Button(2)
 
 def toggle_led():
     led.toggle()
