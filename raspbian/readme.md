@@ -47,7 +47,12 @@ $ deactivate
 * 두 언어를 모두 사용할 때는 패키지 둘 다 설치를 한다.  
 * 터미널 제어
 ```c
-$ pinctrl set 14 op
-$ pinctrl set 14 dh
-$ pinctrl set 14 dl
+$ pinctrl set 14 op        // output
+$ pinctrl set 14 dh        // drive high
+$ pinctrl set 14 dl        // drive low
+```
+* 핀 상태 확인
+```c
+$ pinctrl get              // 쳔재 전체 핀 상태
+$ gpioinfo                 // 상세 
 ```
