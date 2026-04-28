@@ -1,8 +1,8 @@
 from gpiozero import LED, Button
 from time import sleep
 
-led = LED(14)          # GPIO14
-button = Button(18)    # GPIO18, 기본 pull_up=True
+led = LED(17)              # GPIO17
+button = Button(2)         # GPIO2, 기본 pull_up=True
 
 try:
     while True:
