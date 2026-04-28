@@ -8,4 +8,7 @@ def shutdown():
 shutdown_btn = Button(17, hold_time=2)
 shutdown_btn.when_held = shutdown
 
-pause()
+try:
+    pause()                // 종료 시그널까지 기다림
+except KeyboardInterrupt:
+    button.close()
