@@ -18,3 +18,6 @@
 
  except KeyboardInterrupt:
      print("종료")
+
+# 범위 변환
+# new = (현재값 - 최소값) / (최대값 - 최소값) * 새범
