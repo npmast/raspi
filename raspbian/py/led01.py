@@ -1,7 +1,7 @@
 from gpiozero import LED
 from time import sleep
 
-led = LED(14)   # BCM GPIO17
+led = LED(17)   # BCM GPIO17
 
 try:
     while True:
