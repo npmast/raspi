@@ -3,14 +3,10 @@
  
  bus = smbus.SMBus(1)
  ADDR = 0x48
- 
- A0 = 0x40
- A1 = 0x41
- A2 = 0x42
- A3 = 0x43
+ channel = 0
 
- def read_cds():
-     bus.write_byte(ADDR, A0)        # AIN0
+ def read_cds(channel):
+     bus.write_byte(ADDR, 0x40 | channel)        # AIN0
      bus.read_byte(ADDR)             # dummy
      return bus.read_byte(ADDR)
 
