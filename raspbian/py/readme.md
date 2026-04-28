@@ -8,3 +8,10 @@ $ sudo apt install python3-gpiozero python3-lgpio
 - 라즈비안 구조:  
   libgpiod(c) 최신, python gpiod 혼합 버전으로 버전 문제  
   Python gpiod는 버전이 통일되지 않아 Pi5 에서는 끼지기 쉽고 gpiozero가 가장 안정적이다.  
+### API  
+- led = LED(17)
+  led.on() / led.off() /led.value = 0 or 1
+- button = Button(2)
+  button.is_pressed / button.wait_for_press() / button.when_pressed / button.when_released
+- led = PWMLED(17)
+  led.value = 0
