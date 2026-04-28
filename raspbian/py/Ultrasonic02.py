@@ -1,3 +1,4 @@
+# 이벤트
 from gpiozero import DistanceSensor
 from signal import pause
 
