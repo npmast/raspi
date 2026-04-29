@@ -10,7 +10,7 @@ pins = [
     DigitalOutputDevice(23),
 ]
 
-# 버튼 (GPIO18, 풀업 사용)
+# 버튼 (GPIO18, 풀업 사용, 버튼 튐 방지)
 button = Button(18, pull_up=True, bounce_time=0.05)
 
 # Half-step 시퀀스
@@ -41,7 +41,7 @@ def on_button_pressed():
     print("버튼 눌림 → 90도 회전")
     rotate_90()
 
-# 이벤트 등록
+# 이벤트 등록(짧게 / 길게 누름 구분)
 button.when_pressed = on_button_pressed
 
 print("버튼 대기중... (Ctrl+C 종료)")
