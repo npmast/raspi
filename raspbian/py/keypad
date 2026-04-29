@@ -10,7 +10,7 @@ KEYS = [
 ]
 
 # BCM GPIO 번호 기준
-ROW_PINS = [21, 20, 16, 12]      # OUT0, OUT1, OUT2, OUT3
+ROW_PINS = [21, 20, 16, 12]      # OUT3, OUT2, OUT1, OUT0
 COL_PINS = [5, 6, 13, 19]        # IN0, IN1, IN2, IN3
 
 # 행은 출력
