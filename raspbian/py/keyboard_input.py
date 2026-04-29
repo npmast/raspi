@@ -17,6 +17,13 @@ def button_pressed():
 # 버튼이 눌릴 때(when_pressed) 함수 호출
 button.when_pressed = button_pressed
 
+# 키보드 입력 감지 함수
+def on_key(e):
+    print(f"[키 입력 감지] {e.name}")
+
+keyboard.on_press(on_key)
+
+print("프로그램 시작... 버튼을 누르세요.")
 print("프로그램 시작... 버튼을 누르세요.")
 # 프로그램이 종료되지 않도록 유지
 try:
