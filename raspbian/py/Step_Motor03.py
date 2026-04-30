@@ -1,4 +1,4 @@
-# Half-step: 1회전 약 2048
+# Half-step: 360도 2048, 90도 512, 45도 256 step 
 from gpiozero import DigitalOutputDevice
 import time
 
