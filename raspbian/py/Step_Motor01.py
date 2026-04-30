@@ -22,11 +22,11 @@ SEQ = [
     [1,0,0,1],
 ]
 
-def rotate_steps(steps, delay=0.002):        # step을 반복한다.
+def rotate_steps(steps, delay=0.002):        # step을 반복한다. step 사이 대기 시간
     for _ in range(steps):
         for pattern in SEQ:
             for pin, val in zip(pins, pattern):
-                pin.value = val
+                pin.value = val               # GPIO 출
             time.sleep(delay)
 
 try:
