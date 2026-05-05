@@ -15,9 +15,9 @@ def ledOn():
 def ledOf():
   return '<h1> Led Off </h1>'
 
-@app.routhe('/led/clean')
-def gpioCleanup():
-  return '<h1> GPIO CLEANUP </h1>'
-
 if __name__ == "__main__":
-        app.run(host='0.0.0.0', debug=True)
+  try:
+    app.run(host='0.0.0.0', debug=True, use_reloader=False)
+  finally:
+    led.off()
+    led.close()
