@@ -41,5 +41,12 @@ Int 방식: event_wait() => 커널 인터럽트 큐를 기다린다.
   FALLING_EDGE  
   BOTH  
 * 내부 동작  
-  전압 변화 -> GPIO 감지 -> IRQ 발생 -> 커널 핸들러 실행  
+  전압 변화 -> GPIO 감지 -> IRQ 발생 -> 커널 핸들러 실행
+#### 5. I2C
+```c
+$ sudo raspi-config
+3 Interface Options > I4 I2C > Yes > Ok > Finish
+$ ls /dev/i2c*
+$ i2cdetect -y 1
+```
 
