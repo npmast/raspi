@@ -9,9 +9,9 @@ def home():
 	return "Flask Server Test"
 
 #변수규칙
-@app.route('/user/<username>')                    # URL에서 <username>을 매개변수로 받는다
+@app.route('/user/<username>')                    	# URL에서 <username>을 매개변수로 받는다
 def user_profile(username):
-	return "User %s" % username
+	return "User %s" % username						# 클라이어트에게 보낸다.
 
 @app.route('/pw/<int:pw_num>')
 def show_pw(pw_num):
