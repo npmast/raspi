@@ -1,3 +1,5 @@
+## Qt Creator
+
 #### 설치
 ```c
 $ sudo apt update
@@ -12,7 +14,7 @@ $ sudo apt install -y \
 $ sudo apt install -y qtcreator
 $ qmake --version
 ```
-#### Qt Creator  
+#### Qt Creator 프로젝트 생성
 menu > Programming > Qt Creator  
 Create Project... > Appplication(Qt) > Qt Widgets Application > Choose...  
 Name 와 Create in 을 설정한다. > build system 을 설정한다. qmake 는 qt 의 전용 빌드시스템이다.  
@@ -31,4 +33,96 @@ int main(int argc, char *argv[])
     return a.exec();                     // 동작 시작, 종료 시 까지 블로킹 상태
 }
 ```
-Build > Build Project "..." > 좌측 하단의 run 클릭
+Build > Build Project "..." > 좌측 하단의 run 클릭  
+#### 생성 파일  
+Qt Widgets  프로젝트를 생성하면 기본적으로 여러 파일이 자동 생성된다.
+이 파일들을 각각 역할이 다르며, Qt의  GUI 구조를 이루는 핵심 요소이다.
+1. main.cpp  
+   프로그램 시작점
+```c++
+#include "mainwindow.h"
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+
+    MainWindow w;
+    w.show();
+
+    return a.exec();
+}
+```
+* QApplication 생성  
+* MainWindow 객체 생성  
+* GUI 실행 루프 시작  
+2. mainwindow.h  
+   메인 윈도우 클래스 선언 파일. 헤더파일이다. 함수 선언
+```c++
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class MainWindow;
+}
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private:
+    Ui::MainWindow *ui;
+};
+#endif // MAINWINDOW_H
+```
+* 클래스 구조 선언
+* 함수 선언
+* 슬롯(signal/slot) 선언
+* UI 객체 포인터 보관
+3. mainwindow.cpp  
+  메인 윈도우 실제 동작. 핵심 로직
+```c++
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+```
+* 버튼 클릭 동작 작성
+* signal/slot 연결
+* 실제 로직 구현
+* 예:
+```c++
+connect(ui->pushButton, &QPushButton::clicked,
+        this, &MainWindow::onButtonClicked);
+```
+4. mainwindow.ui  
+   GUI 디자인 파일. XML 형식. Qt Designer 가 사용하는 파일. GUI 디자인  
+* 버튼 배치  
+* 라벨 배치  
+* 창 크기 설정  
+*  GUI 시각적 설계
+5. ui_mainwindow.h  
+   Qt가 .ui 파일을 컴파일해서 build 폴더 내부에 자동 생성된다.
+```c
+ui->pushButton
+ui->label
+```
+
