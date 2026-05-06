@@ -1,4 +1,5 @@
-# mainwindow 이름의 ui, cpp, h 3개의 파일을 수정한다.
+// mainwindow 이름의 ui, cpp, h 3개의 파일을 수정한다.
+// connect() 로 연결하기
 1. mainwindow.ui  
   Forms 폴더에 있다.
   Push Button 과 Label 을 Widget Box에서 가져와 비치한다.
