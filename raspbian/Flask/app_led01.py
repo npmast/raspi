@@ -16,7 +16,7 @@ def ledOn():
 def ledOf():
   return '<h1> Led Off </h1>'
 
-@app.routhe('/led/clean')
+@app.route('/led/clean')
 def gpioCleanup():
   return '<h1> GPIO CLEANUP </h1>'
 
