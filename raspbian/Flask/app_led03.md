@@ -2,7 +2,7 @@
 project/  
 ├── app.py  
 └── templates/  
-    └── index.html  
+    └── ledctl.html  
 #### HTML  
 ```html
 - ledctl.html -
