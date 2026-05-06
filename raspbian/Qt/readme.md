@@ -66,20 +66,20 @@ int main(int argc, char *argv[])
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MainWindow;
+class MainWindow;                                // 전방 선언
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow            // Qt Widgets 메인 창 클래스 QMainWindow
 {
-    Q_OBJECT
-
+    Q_OBJECT                   // Qt의 Meta-Object System 활성화 매크로로 Qt 기능을 담당한다.
+                                // signal/slot, RTTI확장, 자동 슬롯 연결
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);            // 생성자
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui;        // Qt Designer가 만든 UI 객체를 가리키는 포인터
 };
 #endif // MAINWINDOW_H
 ```
@@ -93,9 +93,9 @@ private:
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent)        // 생성자
+    : QMainWindow(parent)            // 부모 클래스 QMainWindow 생성자 호출
+    , ui(new Ui::MainWindow)        // 초기화 리스트에서 멤버 ui 객체 생성
 {
     ui->setupUi(this);
 }
