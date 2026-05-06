@@ -5,7 +5,7 @@ project/
     └── index.html  
 #### HTML  
 ```html
-- index.html -
+- ledctl.html -
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,12 +43,12 @@ led = LED(17)
 @app.route("/")
 def index():
     state = "ON" if led.is_lit else "OFF"                // 3항 조건식: A if 조건 else B
-    return render_template("index.html", state=state)
+    return render_template("ledctl.html", state=state)
 
 @app.route("/led/on", methods=["POST"])
 def led_on():
     led.on()
-    return redirect(url_for("index"))
+    return redirect(url_for("index"))                    // url_for("첫 페이지 함수이름")
 
 @app.route("/led/off", methods=["POST"])
 def led_off():
@@ -57,7 +57,7 @@ def led_off():
 
 if __name__ == "__main__":
     try:
-        app.run(host="0.0.0.0", port=5000, use_reloader=False)
+        app.run(host="0.0.0.0", debug=True, use_reloader=False)
     finally:
         led.off()
         led.close()
