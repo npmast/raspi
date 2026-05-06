@@ -15,3 +15,7 @@ $ sudo apt install python3-gpiozero python3-lgpio
   button.is_pressed / button.wait_for_press() / button.when_pressed / button.when_released
 - led = PWMLED(17)
   led.value = 0
+### I2C
+- sudo raspi-config
+- ls /dev/i2c*
+- i2cdetect -y 1
