@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 * MainWindow 객체 생성  
 * GUI 실행 루프 시작  
 2. mainwindow.h  
-   메인 윈도우 클래스 선언 파일. 헤더파일이다. 함수 선언
+   메인 윈도우 클래스 선언 파일. 헤더파일이다. *함수 선언*
 ```c++
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -88,7 +88,7 @@ private:
 * 슬롯(signal/slot) 선언
 * UI 객체 포인터 보관
 3. mainwindow.cpp  
-  메인 윈도우 실제 동작. 핵심 로직
+  메인 윈도우 실제 동작. *핵심 로직*
 ```c++
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -114,7 +114,7 @@ connect(ui->pushButton, &QPushButton::clicked,
         this, &MainWindow::onButtonClicked);
 ```
 4. mainwindow.ui  
-   GUI 디자인 파일. XML 형식. Qt Designer 가 사용하는 파일. GUI 디자인  
+   GUI 디자인 파일. XML 형식. Qt Designer 가 사용하는 파일. *GUI 디자인*  
 * 버튼 배치  
 * 라벨 배치  
 * 창 크기 설정  
