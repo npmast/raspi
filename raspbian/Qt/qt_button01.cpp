@@ -1,8 +1,10 @@
-1. mainwindow.ui
+#### mainwindow 이름의 ui, cpp, h 3개의 파일만 수정한다.
+1. mainwindow.ui  
+  Forms 폴더에 있다.
   Push Button 과 Label 을 Widget Box에서 가져와 비치한다.
   
 2. mainwindow.cpp
-Forms 폴더에 있다.
+  Sources 폴더에 있다.
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
