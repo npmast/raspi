@@ -42,7 +42,7 @@ led = LED(17)
 
 @app.route("/")
 def index():
-    state = "ON" if led.is_lit else "OFF"                      // 3항 조건식: A if 조건 else B
+    state = "ON" if led.is_lit else "OFF"                // 3항 조건식: A if 조건 else B
     return render_template("index.html", state=state)
 
 @app.route("/led/on", methods=["POST"])
