@@ -1,3 +1,6 @@
+# a0 - VRX
+# a1 - VRX
+# sw - GPIO 17
 import smbus
 import time
 from gpiozero import Button
