@@ -9,7 +9,7 @@ app = Flask(__name__)
 def get():
 	value1 = request.args.get('이름', 'user')
 	value2 = request.args.get('지역', '부산')
-	return value1 + " : " + vlaue2
+	return value1 + " : " + value2
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', debug=True)
