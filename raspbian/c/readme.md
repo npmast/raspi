@@ -29,6 +29,58 @@ chip (/dev/gpiochipN)
   gpiod_request_config            consumer 이름 등 메타정보   
   gpiod_line_request              실제 점유된 라인 묶음(핵심 객체) 
   ```
+* 중요한 함수들  
+  GPIO 칩 열기-> GPIO 설정 생성 -> GPIO request 생성 -> GPIO 값 읽기/쓰기 -> GPIO 반환  
+  - gpiod_chip_open()                    GPIO 컨트롤러 장치 염
+  ```c
+  struct gpiod_chip* chip;
+  chip = gpiod_chip_open("/dev/gpiodchip0")
+  ```
+  - gpiod_line_settings_new()            GPIO 동작 설정 객체 생성
+  ```c
+  struct gpiod_line_settings* settings
+  settings = gpiod_line_settings_new();
+  출력 또는 입력 설정
+  gpiod_line_settings_set_direction(
+    settings,
+    GPIOD_LINE_DIRECTION_OUTPUT or GPIOD_LINE_DIRECTION_INPUT
+  );
+  ```
+  - gpiod_line_config_new()                GPIO 라인 설정들을 묶는 객체
+  ```c
+  struct gpiod_line_config *config;
+  config = gpiod_line_config_new();
+  ```
+  - gpiod_chip_request_lines()            GPIO 사용 요청 생성(핵심 햠수)
+  ```c
+  struct gpiod_line_request* request
+  request = gpiod_chip_request_lines(
+    chip,
+    NULL,
+    config
+  );
+  ```
+  - gpiod_line_request_set_value()                GPIO 출력 값 설정
+  ```c
+  gpiod_line_request_set_value(
+    request,
+    21,
+    GPIOD_LINE_VALUE_ACTIVE or GPIOD_LINE_VALUE_INACTIVE
+  );
+  ```
+  - gpiod_line_request_get_value()                GPIO 입력 값 읽기
+  ```c    
+  int value;
+  value = gpiod_line_request_get_value(
+    request,
+    17
+  );
+  ```
+  - gpiod_line_request_release()                사용 해제
+  ```c
+  gpiod_line_request_release(request);
+  ```
+
 * 흐름 패턴
   > 1. chip 열기
   > 2. settings 생성 (output)
